@@ -5,6 +5,7 @@
  */
 package deliverable1;
 
+import java.util.*;
 
 public class Deck {
     
@@ -18,5 +19,12 @@ public class Deck {
     public void setLength(int length)
     {
         this.cards=new Card[length];
+    }
+    
+    public void shuffleCards()
+    {
+        List<Card> tmpCardsList = Arrays.asList(cards);
+        Collections.shuffle(tmpCardsList);
+        this.cards=tmpCardsList.toArray(new Card[tmpCardsList.size()]);
     }
 }
