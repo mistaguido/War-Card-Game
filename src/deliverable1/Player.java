@@ -5,10 +5,6 @@
  */
 package deliverable1;
 
-/**
- *
- * @author REEEE
- */
 public class Player {
     private String name;
     private Deck playerHand;
