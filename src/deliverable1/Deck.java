@@ -9,22 +9,36 @@ import java.util.*;
 
 public class Deck {
     
-    Card[] cards;
+    LinkedList<CardValue> cards;
+    int length;
     
-    public Deck(int length)
+    public Deck(int length, LinkedList<CardValue> cards)
     {
-        cards=new Card[length];
+        this.length=length;
+        this.cards=cards;
     }
     
     public void setLength(int length)
     {
-        this.cards=new Card[length];
+        this.length=length;
     }
     
     public void shuffleCards()
     {
-        List<Card> tmpCardsList = Arrays.asList(cards);
-        Collections.shuffle(tmpCardsList);
-        this.cards=tmpCardsList.toArray(new Card[tmpCardsList.size()]);
+        Collections.shuffle(cards);
+    }
+    
+    //Adds a card to the bottom of the deck.
+    //@param card - Card to insert into deck
+    public void addCard(CardValue card)
+    {
+        cards.addLast(card);
+    }
+    
+    //Removes a card from the specified index
+    //@param index - which index to remove card from
+    public void removeCard(int index)
+    {
+        cards.remove(index);
     }
 }
