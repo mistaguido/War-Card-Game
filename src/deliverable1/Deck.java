@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 
  */
 package deliverable1;
 
@@ -9,20 +7,39 @@ import java.util.*;
 
 public class Deck {
     
-    LinkedList<CardValue> cards;
-    int length;
+    LinkedList<Card> cards;
+    int size=0;
     
-    public Deck(int length, LinkedList<CardValue> cards)
+    public Deck(LinkedList<Card> cards)
     {
-        this.length=length;
         this.cards=cards;
+        this.size=cards.size();
     }
     
-    public void setLength(int length)
+    //
+    //sets size of the deck. will always be the size of linkedlist cards
+    public void setSize()
     {
-        this.length=length;
+        this.size=cards.size();
     }
     
+    //getSize()
+    //@return returns the size of the deck
+    public int getSize()
+    {
+        return this.size;
+    }
+    
+    //getCard()
+    //@param int index - the index of the card in the deck
+    //@return card
+    public Card getCard(int index)
+    {
+        return cards.get(index);
+    }
+    
+    //
+    //Shuffles the deck
     public void shuffleCards()
     {
         Collections.shuffle(cards);
@@ -30,15 +47,40 @@ public class Deck {
     
     //Adds a card to the bottom of the deck.
     //@param card - Card to insert into deck
-    public void addCard(CardValue card)
+    public void addCard(Card card)
     {
         cards.addLast(card);
+        setSize();
     }
     
     //Removes a card from the specified index
-    //@param index - which index to remove card from
+    //@param index - which index of deck to remove card from
     public void removeCard(int index)
     {
         cards.remove(index);
+        setSize();
+    }
+    
+    //Moves the specified from one deck to another
+    //@param index - which index of deck to move the card
+    //@param deck - the deck to move the card to
+    public void moveCard(int index, Deck deck)
+    {
+        deck.addCard(getCard(index)); //i'm a lazy bitch who can't think of some other solution
+        removeCard(index);
+    }
+    
+    @Override
+    public String toString()
+    {
+        String bruh="";
+        for(int i=0; i<this.cards.size();i++)
+        {
+            Card cardToPrint = cards.get(i);
+            //System.out.println(cardToPrint.getSuit() + " " +cardToPrint.getValue());
+            bruh += cardToPrint.getSuit() + " " +cardToPrint.getValue() + "\n";            
+        }
+        
+        return bruh;
     }
 }
