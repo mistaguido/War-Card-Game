@@ -11,4 +11,16 @@ package deliverable1;
  */
 public class Card {
     
+    private CardSuit suit;
+    private CardValue value;
+    
+    //Constructor
+    //yo honestly i'm
+    //too lazy to comment this
+    //because i'm alone
+    public Card(CardSuit suit, CardValue value)
+    {
+        this.suit=suit;
+        this.value=value;
+    }
 }
