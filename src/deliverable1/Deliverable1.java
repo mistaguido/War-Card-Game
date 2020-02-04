@@ -14,6 +14,14 @@ public class Deliverable1 {
         
         Scanner input = new Scanner(System.in);
         
+        Deck player1Deck;
+        Deck player2Deck;
+        
+        //This deck contains all
+        //Cards to be distributed
+        //To both player's decks
+        Deck tempDeck;
+        
         //Players are all to
         //Be stored into a linked list
         //for some future use
@@ -25,9 +33,9 @@ public class Deliverable1 {
         //Asks for both players
         //To enter their names before
         //The game can begin
-        System.out.println("Enter the first player's name:");
+        System.out.println("Enter the first player's name:"); //Player 1 name
         players.addLast(new Player(input.next()));
-        System.out.println("Enter the second player's name:");
+        System.out.println("Enter the second player's name:"); //Player 2 name
         players.addLast(new Player(input.next()));
         
         System.out.println("The cards will be shuffled and distributed now.");
