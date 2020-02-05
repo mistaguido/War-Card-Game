@@ -78,7 +78,7 @@ public class Deliverable1 {
             player1List.push(reserve.getCard(i));
         }
         player1Deck = new Deck(player1List);
-        System.out.println(player1Deck.toString()); //debug kek
+        //System.out.println(player1Deck.toString()); //debug kek
 
         /*Player two! This is 
          *The last of my reserve cards.
@@ -90,7 +90,7 @@ public class Deliverable1 {
             player2List.push(reserve.getCard(i));
         }
         player2Deck = new Deck(player2List);
-        System.out.println("\n" + player2Deck.toString()); //THIS SUCKS MORE ASS THAN A DONKEY FUCKER
+        //System.out.println("\n" + player2Deck.toString()); //THIS SUCKS MORE ASS THAN A DONKEY FUCKER
 
         //
         System.out.println("Finished distributing cards. The game will begin now.\n");
