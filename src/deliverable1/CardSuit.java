@@ -5,7 +5,7 @@ package deliverable1;
 
 
 public enum CardSuit{
-    HEARTS("Heart"), CLUBS("Clubs"), SPADES("Spades"), DIAMONDS("Diamonds");
+    HEARTS("Hearts"), CLUBS("Clubs"), SPADES("Spades"), DIAMONDS("Diamonds");
     
     private final String suit;
     
