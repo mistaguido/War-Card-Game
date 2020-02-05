@@ -10,17 +10,52 @@ package deliverable1;
  * @author REEEE
  */
 public class Card {
-    
-    private CardSuit suit;
-    private CardValue value;
-    
-    //Constructor
-    //yo honestly i'm
-    //too lazy to comment this
-    //because i'm alone
-    public Card(CardSuit suit, CardValue value)
-    {
-        this.suit=suit;
-        this.value=value;
+
+    private final CardSuit suit;
+    private final CardValue value;
+
+    public Card(CardSuit suit, CardValue value) {
+        this.suit = suit;
+        this.value = value;
+    }
+
+    //Get suit
+    public String getSuit() {
+        return this.suit.getSuit();
+    }
+
+    //Get value
+    public int getValue() {
+        return this.value.getValue();
+    }
+
+    //toString
+    @Override
+    public String toString() {
+        int cardValue = getValue();
+        String cardValueStr = "";
+        switch (cardValue) {
+            case 11: {
+                cardValueStr = "Jack";
+                break;
+            }
+            case 12: {
+                cardValueStr = "Queen";
+                break;
+            }
+            case 13: {
+                cardValueStr = "King";
+                break;
+            }
+            case 14: {
+                cardValueStr = "Ace";
+                break;
+            }
+            default:
+            {
+                cardValueStr+=getValue();
+            }
+        }
+        return cardValueStr + " of " + getSuit();
     }
 }
